@@ -46,10 +46,10 @@
       });
 	  
 	  <!-- Socket.io state changes -->
-	  socket.on('connected', function() {
+	  socket.on('connect', function() {
 		$('#messages').append("<li>Connected!</li>");
 	  });
-	  socket.on('disconnected', function() {
+	  socket.on('disconnect', function() {
 		$('#messages').append("<li>Someting went wrong... You've been disconnected :( Attemping to reconnect...</li>");
 	  });
 	  
