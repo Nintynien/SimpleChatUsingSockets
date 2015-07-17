@@ -45,6 +45,14 @@
         return false;
       });
 	  
+	  <!-- Socket.io state changes -->
+	  socket.on('connected', function() {
+		$('#messages').append("<li>Connected!</li>");
+	  });
+	  socket.on('disconnected', function() {
+		$('#messages').append("<li>Someting went wrong... You've been disconnected :( Attemping to reconnect...</li>");
+	  });
+	  
 	  <!-- Received a message -->
       socket.on('chat message', function(msg){
 		var datetime = msg.datetime;
